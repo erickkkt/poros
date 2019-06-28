@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Poros/.vs/*
+/Poros/Poros.Api/bin/*
+/Poros/Poros.Api/obj/*
+/Poros/Poros.Auth/bin/*
+/Poros/Poros.Auth/obj/*
+/Poros/Poros.BusinessLogic/bin/*
+/Poros/Poros.BusinessLogic/obj/*
+/Poros/Poros.Common/bin/*
+/Poros/Poros.Common/obj/*
+/Poros/Poros.DataAccess/bin/*
+/Poros/Poros.DataAccess/obj/*
+/Poros/Poros.Entities/bin/*
+/Poros/Poros.Entities/obj/*
