@@ -6,7 +6,7 @@ import { AuthGuard } from '../core/authentication/auth.guard';
 
 const routes: Routes = [
 Shell.childRoutes([
-    { path: 'topsecret', component: IndexComponent, canActivate: [AuthGuard] }       
+    { path: 'values', component: IndexComponent, canActivate: [AuthGuard] }       
   ])
 ];
 
