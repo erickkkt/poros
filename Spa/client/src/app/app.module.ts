@@ -1,28 +1,42 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegistrationComponent } from './pages/registration/registration.component';
-import { HomeComponent } from './pages/home/home.component';
-import { OAuthModule } from 'angular-oauth2-oidc';
-import { HttpClientModule } from '@angular/common/http';
+
+import { ConfigService } from './shared/config.service';
+
+import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
+
+
+/* Module Imports */
+import { CoreModule } from './core/core.module';
+import { HomeModule }  from './home/home.module';
+import { AccountModule }  from './account/account.module';
+import { ShellModule } from './shell/shell.module';
+import { TopSecretModule } from './top-secret/top-secret.module';
+import { SharedModule }   from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegistrationComponent,
-    HomeComponent
+    AuthCallbackComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,  
+    HttpClientModule, 
+    CoreModule,
+    HomeModule,
+    AccountModule,
+    TopSecretModule,   
     AppRoutingModule,
-    HttpClientModule,
-    OAuthModule.forRoot()
+    ShellModule,   
+    SharedModule    
   ],
-  providers: [],
+  providers: [
+    ConfigService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

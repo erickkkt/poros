@@ -5,8 +5,10 @@
 /Poros/.vs/*
 /Poros/Poros.Api/bin/*
 /Poros/Poros.Api/obj/*
+/Poros/Poros.Api/Logs/*
 /Poros/Poros.Auth/bin/*
 /Poros/Poros.Auth/obj/*
+/Poros/Poros.Auth/Logs/*
 /Poros/Poros.BusinessLogic/bin/*
 /Poros/Poros.BusinessLogic/obj/*
 /Poros/Poros.Common/bin/*

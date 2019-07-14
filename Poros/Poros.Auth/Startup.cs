@@ -14,6 +14,7 @@ using Poros.Auth.Services;
 using Poros.Auth.Extensions;
 using Serilog;
 using System.Net;
+using IdentityServer4;
 
 namespace Poros.Auth
 {
@@ -51,15 +52,14 @@ namespace Poros.Auth
                 .AddInMemoryClients(Config.GetClients())
                 .AddAspNetIdentity<AppUser>();
 
-                /* We'll play with this down the road... 
-                    services.AddAuthentication()
-                    .AddGoogle("Google", options =>
-                    {
-                        options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+                //services.AddAuthentication()
+                //.AddGoogle("Google", options =>
+                //{
+                //    options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
 
-                        options.ClientId = "<insert here>";
-                        options.ClientSecret = "<insert here>";
-                    });*/
+                //    options.ClientId = "<insert here>";
+                //    options.ClientSecret = "<insert here>";
+                //});
 
             services.AddTransient<IProfileService, IdentityClaimsProfileService>();
 
@@ -97,7 +97,7 @@ namespace Poros.Auth
             var serilog = new LoggerConfiguration()
                 .MinimumLevel.Verbose()
                 .Enrich.FromLogContext()
-                .WriteTo.File(@"authserver_log.txt");
+                .WriteTo.File(@"Logs/authserver_log.txt");
 
             loggerFactory.WithFilter(new FilterLoggerSettings
                 {
